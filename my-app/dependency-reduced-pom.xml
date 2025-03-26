@@ -20,7 +20,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.example.Figure8PDFCreator</mainClass>
+                  <mainClass>com.example.PDFCreator</mainClass>
                 </transformer>
               </transformers>
             </configuration>

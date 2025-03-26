@@ -2,6 +2,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.example</groupId>
   <artifactId>figure8pdf</artifactId>
   <packaging>jar</packaging>
@@ -15,10 +16,25 @@
   </properties>
 
   <dependencies>
+    <!-- Apache PDFBox for PDF generation -->
     <dependency>
       <groupId>org.apache.pdfbox</groupId>
       <artifactId>pdfbox</artifactId>
       <version>2.0.28</version>
+    </dependency>
+
+    <!-- Apache Commons Imaging for better image handling -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-imaging</artifactId>
+      <version>1.0-alpha3</version>
+    </dependency>
+
+    <!-- Java AWT (Fix for Java 11+ environments missing GeneralPath support) -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.1</version>
     </dependency>
   </dependencies>
 
@@ -38,7 +54,7 @@
               <transformers>
                 <transformer
                   implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.example.Figure8PDFCreator</mainClass>
+                  <mainClass>com.example.PDFCreator</mainClass>
                 </transformer>
               </transformers>
             </configuration>
